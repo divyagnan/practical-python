@@ -18,7 +18,8 @@ while principal > 0:
         total_payment += extra_payment
     principal = principal * (1 + rate / 12) - total_payment
     total_paid = total_paid + total_payment
-    print(current_month, round(total_paid, 1), round(principal, 1))
+    output = f'Month: {current_month:3d}  Total Paid: ${total_paid:<9.2f}  Principal: ${principal:<9.2f}'
+    print(output)
 
 
 print('Total Paid:', round(total_paid, 1))
