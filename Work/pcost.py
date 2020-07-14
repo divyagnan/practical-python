@@ -12,10 +12,9 @@ def portfolio_cost(filename):
         rows = csv.reader(file)
         # skip headers
         next(file)
-        for line in file:
+        for row in rows:
             try:
-                values = line.split(',')
-                total_cost += (int(values[1]) * float(values[2]))
+                total_cost += (int(row[1]) * float(row[2]))
             except:
                 print('Failed to parse, moving on...')
     return total_cost
