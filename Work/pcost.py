@@ -8,8 +8,11 @@ def portfolio_cost(filename):
         # skip headers
         next(file)
         for line in file:
-            values = line.split(',')
-            total_cost += (int(values[1]) * float(values[2]))
+            try:
+                values = line.split(',')
+                total_cost += (int(values[1]) * float(values[2]))
+            except:
+                print('Failed to parse, moving on...')
     return total_cost
 
 
